@@ -18,13 +18,18 @@ function decreaseNumber(inputFieldId){
     
 }
 
-document.getElementById('case-button').addEventListener('click',function(){
-    
+// to increase or decrease mobile amount
+document.getElementById('case-button').addEventListener('click',function(){    
     increaseNumber('case-number');
 })
-
-
-
 document.getElementById('case-button-minus').addEventListener('click', function(){
     decreaseNumber('case-number');
+})
+
+// to increase or decrease case amount
+document.getElementById('case-button2').addEventListener('click', function(){
+    increaseNumber('input-text2');
+})
+document.getElementById('case-button2-minus').addEventListener('click',function(){
+    decreaseNumber('input-text2');
 })
