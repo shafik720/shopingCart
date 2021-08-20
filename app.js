@@ -30,11 +30,17 @@ document.getElementById('case-button').addEventListener('click',function(){
     let casePrice = 59 * caseAmount;
     let showCasePrice = document.getElementById('fifty-nine');
     showCasePrice.innerHTML = casePrice;
-    console.log(casePrice);
+    // console.log(casePrice);
 
 })
 document.getElementById('case-button-minus').addEventListener('click', function(){
     decreaseNumber('case-number');
+    let caseAmountss = document.getElementById('case-number');
+    let caseAmounts = caseAmountss.value;
+    let caseAmount = parseInt(caseAmounts);
+    let casePrice = 59 * caseAmount;
+    let showCasePrice = document.getElementById('fifty-nine');
+    showCasePrice.innerHTML = casePrice;
 })
 
 // to increase or decrease mobile amount
