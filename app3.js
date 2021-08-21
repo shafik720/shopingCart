@@ -16,15 +16,10 @@ function increaseProduct(productName, isTrue, price){
     mobileValues.innerText = parseInt(inputTexts.value) * price;
 }
 function totalValue(){
-    let subTotals = document.getElementById('subTotal');
-    let subTotal = subTotals.innerText;
-
-    let taxIds = document.getElementById('taxId');
-    let taxId = parseFloat(taxIds.innerText);
-
+    let subTotals = document.getElementById('subTotal');    
+    let taxIds = document.getElementById('taxId');    
     let allTotals = document.getElementById('allTotal');
-    let allTotal = parseFloat(allTotals.innerText);
-
+    
     let mobilePrices = document.getElementById('mobile-value');
     let mobilePrice = parseFloat(mobilePrices.innerText);
 
@@ -32,9 +27,14 @@ function totalValue(){
     let casePrice = parseFloat(casePrices.innerText);
 
     let mainSubTotal = mobilePrice + casePrice;
+    let tax = mainSubTotal/10;
+    let finalTotal = mainSubTotal + tax;
+    
 
     subTotals.innerText = mainSubTotal;
-    console.log(mainSubTotal);
+    taxIds.innerText = tax;
+    allTotals.innerText = finalTotal;
+    
 }
 
 
@@ -45,12 +45,19 @@ document.getElementById('mobile-button').addEventListener('click', function(){
 })
 document.getElementById('mobile-button-minus').addEventListener('click', function(){
     increaseProduct('mobile', false, 1219);
+    totalValue();
 })
 
 // for case 
 document.getElementById('case-button').addEventListener('click', function(){
     increaseProduct('case', true, 59);
+    totalValue();
 })
 document.getElementById('case-button-minus').addEventListener('click', function(){
     increaseProduct('case', false, 59);
+    totalValue();
+})
+
+document.getElementById('checkButton').addEventListener('click', function(){
+    window.location.href = 'congrats.html';
 })
