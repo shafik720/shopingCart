@@ -15,11 +15,33 @@ function increaseProduct(productName, isTrue, price){
     let mobileValues = document.getElementById(productName+'-value');
     mobileValues.innerText = parseInt(inputTexts.value) * price;
 }
+function totalValue(){
+    let subTotals = document.getElementById('subTotal');
+    let subTotal = subTotals.innerText;
+
+    let taxIds = document.getElementById('taxId');
+    let taxId = parseFloat(taxIds.innerText);
+
+    let allTotals = document.getElementById('allTotal');
+    let allTotal = parseFloat(allTotals.innerText);
+
+    let mobilePrices = document.getElementById('mobile-value');
+    let mobilePrice = parseFloat(mobilePrices.innerText);
+
+    let casePrices = document.getElementById('case-value');
+    let casePrice = parseFloat(casePrices.innerText);
+
+    let mainSubTotal = mobilePrice + casePrice;
+
+    subTotals.innerText = mainSubTotal;
+    console.log(mainSubTotal);
+}
 
 
 //for mobile phone
 document.getElementById('mobile-button').addEventListener('click', function(){
     increaseProduct('mobile', true, 1219);
+    totalValue();
 })
 document.getElementById('mobile-button-minus').addEventListener('click', function(){
     increaseProduct('mobile', false, 1219);
